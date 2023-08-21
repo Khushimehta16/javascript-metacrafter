@@ -1,0 +1,54 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+const NFTs=[];
+function mintNFT (Flower,Colour,Type_of_pollination,Blooming_season) {
+    const NFT={
+"Name": Flower,
+"ColourOfFlower": Colour,
+"TypeOfPollination": Type_of_pollination,
+"BloomingSeason": Blooming_season,
+    }
+    NFTs.push(NFT);
+}
+
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    for(let i=0;i<NFTs.length;i++){
+        console.log( "\nNAME   = " + NFTs[i].Name);
+        console.log( "COLOUR = "  + NFTs[i].ColourOfFlower);
+        console.log("POLLINATION TYPE = " +  NFTs[i].TypeOfPollination);
+        console.log("SEASON OF BLOOMING = " + NFTs[i].BloomingSeason);
+
+
+
+    }
+
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+console.log("LENGTH = "+NFTs.length);
+}
+
+// call your functions below this line
+mintNFT("Rose","Red","InsectPollinated","EarlyWinter");
+mintNFT("Rose","Pink","InsectPollinated","EarlyWinter");
+mintNFT("Lotus","Pink","InsectPollinated","Summer");
+mintNFT("Lily","White","InsectPollinated","Autumn");
+listNFTs();
+getTotalSupply();
